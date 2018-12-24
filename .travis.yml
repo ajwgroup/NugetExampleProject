@@ -19,8 +19,8 @@ cache:
     - '$HOME/.sonar/cache'
 
 script:
-  - dotnet build $PROJECT_NAME.sln -c Release
-  - dotnet test -c Release --no-build $PROJECT_NAMETests/$PROJECT_NAMETests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+  - dotnet build $PROJECT_NAME$.sln -c Release
+  - dotnet test -c Release --no-build $PROJECT_NAME$Tests/$PROJECT_NAME$Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 after_success:
   - echo dotnet test succeeded
   - bash <(curl -s https://codecov.io/bash)
