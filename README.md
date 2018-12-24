@@ -33,7 +33,6 @@ Once the token has been obtained add it to the CI variables as instructed above 
 ## Code Coverage
 
 [Codecov](https://codecov.io/gh/ajwgroup/NugetExampleProject) is used for displaying the projects test code coverage.
-
 Code coverage can be seen [here](https://codecov.io/gh/ajwgroup/NugetExampleProject).
 
 **No variables need to be set for the code coverage to published.**
