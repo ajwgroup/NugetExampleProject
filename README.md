@@ -34,6 +34,8 @@ Once the token has been obtained add it to the CI variables as instructed above 
 
 [Codecov](https://codecov.io/gh/ajwgroup/NugetExampleProject) is used for displaying the projects test code coverage.
 
+Code coverage can be seen [here](https://codecov.io/gh/ajwgroup/NugetExampleProject).
+
 **No variables need to be set for the code coverage to published.**
 
 ## SonarCloud
@@ -63,6 +65,7 @@ For a consistent look it's recommended to use badges available from [shields.io]
 - [![Latest Nuget Pre-Release](https://img.shields.io/nuget/vpre/NugetExampleProject.svg?style=flat-square&colorB=yellow&label=nuget-prerelease)](https://www.nuget.org/packages/NugetExampleProject/) **Package not published**
 - [![Coverage Status](https://img.shields.io/codecov/c/github/ajwgroup/NugetExampleProject.svg?logo=codecov&style=flat-square)](https://codecov.io/gh/ajwgroup/NugetExampleProject)
 - [![Last commit](https://img.shields.io/github/last-commit/ajwgroup/NugetExampleProject.svg?style=flat-square)](https://github.com/ajwgroup/NugetExampleProject)
+- [![Code Quality](https://sonarcloud.io/api/project_badges/measure?project=ajwgroup_NugetExampleProject&metric=alert_status)](https://sonarcloud.io/dashboard?id=ajwgroup_NugetExampleProject)
 
 ## ToDo
 
