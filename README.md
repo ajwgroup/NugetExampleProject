@@ -56,7 +56,7 @@ The sonarcloud token should be set to the key `$SONARCLOUD_TOKEN`.
 
 For a consistent look it's recommended to use badges available from [shields.io](https://shields.io). Example Badges can be seen below.
 
--  [![License - MIT](https://img.shields.io/github/license/ajwgroup/NugetExampleProject.svg?style=flat-square)](https://github.com/ajwgroup/NugetExampleProject/blob/master/LICENSE)
+- [![License - MIT](https://img.shields.io/github/license/ajwgroup/NugetExampleProject.svg?style=flat-square)](https://github.com/ajwgroup/NugetExampleProject/blob/master/LICENSE)
 - [![Build Status](https://img.shields.io/travis/com/ajwgroup/NugetExampleProject/master.svg?logo=travis&style=flat-square)](https://travis-ci.com/ajwgroup/NugetExampleProject)
 - [![Issues](https://img.shields.io/github/issues/ajwgroup/NugetExampleProject.svg?style=flat-square)](https://github.com/ajwgroup/NugetExampleProject/issues)
 - ![Latest Nuget Release](https://img.shields.io/nuget/v/NugetExampleProject.svg?style=flat-square&link=http://www.nuget.org/packages/NugetExampleProject/&link=http://www.nuget.org/packages/NugetExampleProject/) **Package not published**
