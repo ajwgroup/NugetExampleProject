@@ -25,6 +25,7 @@ after_success:
   - echo dotnet test succeeded
   - bash <(curl -s https://codecov.io/bash)
   - sed -i -e "s/PROJECT_NAME/${PROJECT_NAME}/g" sonar-project.properties
+  - cat sonar-project.properties
   - sonar-scanner
 after_failure:
   - echo There has been an issue with build/test
