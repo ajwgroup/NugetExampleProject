@@ -30,9 +30,16 @@ after_success:
 after_failure:
   - echo There has been an issue with build/test
 
-# deploy:
-#   skip_cleanup: true
-#   provider: script
-#   script: chmod +x ./deploy/deploy.sh && ./deploy/deploy.sh $NUGET_API_KEY
-#   on:
-#     branch: master
+deploy:
+  # - provider: script
+  #   script: chmod +x ./deploy/deploy.sh && ./deploy/deploy.sh $NUGET_API_KEY
+  #   skip_cleanup: true
+  #   on:
+  #     branch: master
+  - provider: pages
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+    keep-history: true
+    local-dir: ${PROJECT_NAME}/_site
+    on:
+      branch: master

@@ -54,6 +54,10 @@ Code coverage can be seen [here](https://codecov.io/gh/ajwgroup/NugetExampleProj
 
 The sonarcloud token should be set to the key `$SONARCLOUD_TOKEN`.
 
+## Github Pages
+
+[Guide to deploy to github pages](https://docs.travis-ci.com/user/deployment/pages/)
+
 ## Badges
 
 For a consistent look it's recommended to use badges available from [shields.io](https://shields.io). Example Badges can be seen below.
