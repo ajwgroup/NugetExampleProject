@@ -75,10 +75,6 @@ Once the token has been generated and stored as `GITHUB_TOKEN` within travis, th
 
 For more information on deploying to github pages read this [guide to deploy to github pages](https://docs.travis-ci.com/user/deployment/pages/).
 
-## Github Pages
-
-[Guide to deploy to github pages](https://docs.travis-ci.com/user/deployment/pages/)
-
 ## Badges
 
 For a consistent look it's recommended to use badges available from [shields.io](https://shields.io). Example Badges can be seen below.
