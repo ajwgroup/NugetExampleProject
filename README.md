@@ -20,15 +20,15 @@ This variable should be set to the project name displayed at the end of the gith
 
 ### NUGET_KEY
 
-To be able to push the package to nuget in the deployment stage, the `$NUGET_KEY` needs to be set.
+To be able to push the package to nuget in the deployment stage, the `NUGET_KEY` needs to be set.
 
-The `$NUGET_KEY` can be created by selecting 'API Keys' from the account menu drop down on the nuget website.
+The `NUGET_KEY` can be created by selecting 'API Keys' from the account menu drop down on the nuget website.
 
 From here give the key a friendly name and set the key duration (This is 365 days by default).
 
 If the package has already been published you can select an Available package, or you can specify a Glob pattern for the package(s) that you would like the API key to apply to. It's adviced to create a key for each package that is to be published so that keys can be revoked on a per package basis.
 
-Once the token has been obtained add it to the CI variables as instructed above with the Key name `$NUGET_KEY`.
+Once the token has been obtained add it to the CI variables as instructed above with the Key name `NUGET_KEY`.
 
 ## Code Coverage
 
@@ -51,11 +51,29 @@ Code coverage can be seen [here](https://codecov.io/gh/ajwgroup/NugetExampleProj
 
 ![Add Sonar token to CI variables](images/SonarTokenVariable.png)
 
-The sonarcloud token should be set to the key `$SONARCLOUD_TOKEN`.
+The sonarcloud token should be set to the key `SONARCLOUD_TOKEN`.
 
 ## Github Pages
 
-[Guide to deploy to github pages](https://docs.travis-ci.com/user/deployment/pages/)
+To create and publish documentation for the nuget package DocFx is used within the project. [DocFx](https://) uses a combination of markdown files and automatically generated content from comments within the code to produce a clean and easily navigable source of documentation and as such is recommended, though not necessary.
+
+### Setting up pages branch
+
+> **Note**: Ensure there is a branch 'gh-pages' available before allowing the CI to attempt to publish.
+
+In the settings for the github project under the 'GitHub Pages' section, pick the 'gh-pages' branch as the source for the pages site.
+
+### Create Token
+
+To provide travis with the ability to deploy the documentation you’ll need to generate a personal access token with the public_repo permission.
+
+Since the token should be private, you’ll want to pass it to Travis securely in your repository settings. To generate a personal token follow [this guide](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/).
+
+### Deployment
+
+Once the token has been generated and stored as `GITHUB_TOKEN` within travis, the CI for this example project should be able to publish any static files stored in `{PROJECT_NAME}/_site`, this is the default location used by DocFx to store the static files.
+
+For more information on deploying to github pages read this [guide to deploy to github pages](https://docs.travis-ci.com/user/deployment/pages/).
 
 ## Badges
 
@@ -72,5 +90,5 @@ For a consistent look it's recommended to use badges available from [shields.io]
 
 ## ToDo
 
-- [ ] Add in automated documentation generation
+- [x] Add in automated documentation generation
 - [ ] Generate a visual studio template project
