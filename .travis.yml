@@ -19,14 +19,13 @@ cache:
     - '$HOME/.sonar/cache'
 
 script:
-  - dotnet restore
   - dotnet build ${PROJECT_NAME}.sln -c Release
   - dotnet test -c Release --no-build ${PROJECT_NAME}Tests/${PROJECT_NAME}Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 after_success:
-  - echo dotnet test succeeded
+  - echo dotnet test succeeded, uploading code coverage
   - bash <(curl -s https://codecov.io/bash)
+  - echo generate code quality
   - sed -i -e "s/PROJECT_NAME/${PROJECT_NAME}/g" sonar-project.properties
-  - cat sonar-project.properties
   - sonar-scanner
 after_failure:
   - echo There has been an issue with build/test
