@@ -6,7 +6,7 @@
           "files": [
             "**.csproj"
           ],
-          "src": "NugetExampleProject"
+          "src": ""
         }
       ],
       "dest": "api",
