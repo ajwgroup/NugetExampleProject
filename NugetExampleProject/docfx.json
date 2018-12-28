@@ -6,7 +6,7 @@
           "files": [
             "**.csproj"
           ],
-          "src": "C:\\Users\\adam.worley\\Documents\\github\\NugetExampleProject\\NugetExampleProject"
+          "src": "NugetExampleProject"
         }
       ],
       "dest": "api",
