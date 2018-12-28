@@ -5,7 +5,7 @@ dist: xenial
 
 env:
   global:
-    - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
+    - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=0
     - DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 addons:
@@ -23,10 +23,9 @@ script:
   - dotnet tool install -g dotnetsay
   - dotnetsay
   - echo $PATH
-  - echo $HOME
+  - ls $HOME
   - echo "export PATH=\"\$PATH:\$HOME/.dotnet/tools\"" >> ~/.bash_profile
   - . ~/.bashrc
-  - cat ~/.bash_profile
   - dotnetsay
   - dotnet tool install --add-source https://www.myget.org/F/docfx-v3/api/v2 -g docfx --version 3.0.0-alpha-HEAD-00556-a1cfa8ee5
   - dotnet build ${PROJECT_NAME}.sln -c Release
