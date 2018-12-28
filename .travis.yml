@@ -22,11 +22,11 @@ script:
   - echo intalling docfx
   - dotnet tool install -g dotnetsay
   - echo $PATH
-  - ls $HOME -a
   - echo "export PATH=\"\$PATH:\$HOME/.dotnet/tools\"" >> ~/.bash_profile
   - . ~/.bashrc
   - dotnetsay
   - dotnet tool install --add-source https://www.myget.org/F/docfx-v3/api/v2 -g docfx --version 3.0.0-*
+  - ls $HOME/.dotnet/tools -a
   - dotnet build ${PROJECT_NAME}.sln -c Release
   - dotnet test -c Release --no-build ${PROJECT_NAME}Tests/${PROJECT_NAME}Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
   - docfx ${PROJECT_NAME}/docfx.json
