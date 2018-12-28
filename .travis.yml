@@ -19,8 +19,11 @@ cache:
     - '$HOME/.sonar/cache'
 
 script:
+  - echo intalling docfx
+  - nuget install docfx.console
   - dotnet build ${PROJECT_NAME}.sln -c Release
   - dotnet test -c Release --no-build ${PROJECT_NAME}Tests/${PROJECT_NAME}Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+  - docfx ${PROJECT_NAME}/docfx.json
 after_success:
   - echo dotnet test succeeded, uploading code coverage
   - bash <(curl -s https://codecov.io/bash)
@@ -31,11 +34,12 @@ after_failure:
   - echo There has been an issue with build/test
 
 deploy:
-  # - provider: script
-  #   script: chmod +x ./deploy/deploy.sh && ./deploy/deploy.sh $NUGET_API_KEY
-  #   skip_cleanup: true
-  #   on:
-  #     branch: master
+  - provider: script
+    script: echo uncomment line in .travis.yml to deploy
+    # - chmod +x ./deploy/deploy.sh && ./deploy/deploy.sh $NUGET_API_KEY
+    skip_cleanup: true
+    on:
+      branch: master
   - provider: pages
     skip-cleanup: true
     github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
