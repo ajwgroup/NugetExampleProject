@@ -20,7 +20,7 @@ cache:
 
 script:
   - echo intalling docfx
-  - nuget install docfx.console
+  - dotnet tool install -g docfx --version 3.0.0-alpha-HEAD-00556-a1cfa8ee5 --add-source https://www.myget.org/F/docfx-v3/api/v2
   - dotnet build ${PROJECT_NAME}.sln -c Release
   - dotnet test -c Release --no-build ${PROJECT_NAME}Tests/${PROJECT_NAME}Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
   - docfx ${PROJECT_NAME}/docfx.json
